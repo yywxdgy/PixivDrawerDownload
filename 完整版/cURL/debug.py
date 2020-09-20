@@ -53,7 +53,7 @@ def download(pid, file_path):
         os.mkdir(file_path)
     os.chdir(file_path)
     file_path = file_path + '\\' + pid
-    if os.path.exists(file_path + '.png') or os.path.exists(file_path + '_p0.jpg'):
+    if os.path.exists(file_path + '_p0.png') or os.path.exists(file_path + '_p0.jpg') or os.path.exists(file_path + '\\' + str(pid) + '_p0.jpg') or os.path.exists(file_path + '\\' + str(pid) + '_p0.png'):
         print('作品 {} 早就下好了'.format(pid))
     else:
         urlsum = Geturl(pid)
@@ -61,14 +61,25 @@ def download(pid, file_path):
         hhd['referer'] = str(urlsum)
         count = requests.get(urlsum, headers=hhd)
         JSON = json.loads(count.text)['body']
-        cnt = 0
-        for no_use in JSON:
-            img_url = no_use['urls']['original']
+        if len(JSON) > 1:
+            if os.path.exists(file_path):
+                pass
+            else:
+                os.mkdir(file_path)
+            file_path = file_path + '\\' + str(pid)
+            cnt = 0
+            for no_use in JSON:
+                img_url = no_use['urls']['original']
+                filepath = '{}{}'.format(file_path, img_url[-7:])
+                print('原图地址：', img_url, '\n下载中......', end='')
+                os.system('curl "' + img_url + '" >' + filepath + ' ^ -H "Upgrade-Insecure-Requests: 1" ^ -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" ^ -H "Referer: https://www.pixiv.net/" ^ --compressed')
+                ++cnt
+                # sleep(3)
+        else:
+            img_url = JSON[0]['urls']['original']
             filepath = '{}{}'.format(file_path, img_url[-7:])
             print('原图地址：', img_url, '\n下载中......', end='')
             os.system('curl "' + img_url + '" >' + filepath + ' ^ -H "Upgrade-Insecure-Requests: 1" ^ -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36" ^ -H "Referer: https://www.pixiv.net/" ^ --compressed')
-            ++cnt
-            # sleep(3)
 
 
 file_path = o_path
@@ -84,7 +95,7 @@ for q in name:
         userName = JSON['body']['illusts'][str(q)]['userName']
         Name = userName
         break
-    except:
+    except KeyError:
         pass
 for q in name:
     id_1 = str(q)
@@ -97,13 +108,19 @@ for q in name:
         print('当前第', i + 1, '个, ')
     except KeyError:
         print('当前第', i + 1, '个，省略详细信息，')
-    file_path = '{}\\{}'.format(o_path, Name)
-    if os.path.exists(o_path + '\\' + Name):
+    file_path = '{}\\{}'.format(o_path, str(ID))
+    filepath = '{}\\{}'.format(o_path, Name)
+    if os.path.exists(file_path) or os.path.exists(filepath):
+        if os.path.exists(file_path) and not os.path.exists(filepath):
+            filepath = file_path
         pass
     else:
-        os.mkdir(file_path)
-    os.chdir(file_path)
-    filepath = '{}\\{}'.format(o_path, Name)
+        try:
+            os.mkdir(filepath)
+        except OSError:
+            os.mkdir(file_path)
+            filepath = file_path
+    os.chdir(filepath)
     download(q, filepath)
     i += 1
 

@@ -95,7 +95,7 @@ for q in name:
         userName = JSON['body']['illusts'][str(q)]['userName']
         Name = userName
         break
-    except:
+    except KeyError:
         pass
 for q in name:
     id_1 = str(q)
@@ -109,12 +109,18 @@ for q in name:
     except KeyError:
         print('当前第', i + 1, '个，省略详细信息，')
     file_path = '{}\\{}'.format(o_path, str(ID))
-    if os.path.exists(o_path + '\\' + str(ID)):
+    filepath = '{}\\{}'.format(o_path, Name)
+    if os.path.exists(file_path) or os.path.exists(filepath):
+        if os.path.exists(file_path) and not os.path.exists(filepath):
+            filepath = file_path
         pass
     else:
-        os.mkdir(file_path)
-    os.chdir(file_path)
-    filepath = '{}\\{}'.format(o_path, str(ID))
+        try:
+            os.mkdir(filepath)
+        except OSError:
+            os.mkdir(file_path)
+            filepath = file_path
+    os.chdir(filepath)
     download(q, filepath)
     i += 1
 
