@@ -53,7 +53,7 @@ def download(pid, file_path):
         os.mkdir(file_path)
     os.chdir(file_path)
     file_path = file_path + '\\' + pid
-    if os.path.exists(file_path + '.png') or os.path.exists(file_path + '_p0.jpg'):
+    if os.path.exists(file_path + '_p0.png') or os.path.exists(file_path + '_p0.jpg') or os.path.exists(file_path + '\\' + str(pid) + '_p0.jpg') or os.path.exists(file_path + '\\' + str(pid) + '_p0.png'):
         print('作品 {} 早就下好了'.format(pid))
     else:
         urlsum = Geturl(pid)
@@ -108,13 +108,13 @@ for q in name:
         print('当前第', i + 1, '个, ')
     except KeyError:
         print('当前第', i + 1, '个，省略详细信息，')
-    file_path = '{}\\{}'.format(o_path, Name)
-    if os.path.exists(o_path + '\\' + Name):
+    file_path = '{}\\{}'.format(o_path, str(ID))
+    if os.path.exists(o_path + '\\' + str(ID)):
         pass
     else:
         os.mkdir(file_path)
     os.chdir(file_path)
-    filepath = '{}\\{}'.format(o_path, Name)
+    filepath = '{}\\{}'.format(o_path, str(ID))
     download(q, filepath)
     i += 1
 
