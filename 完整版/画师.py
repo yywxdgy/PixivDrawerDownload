@@ -18,7 +18,7 @@ os.chdir(o_path)
 print('正在初始化，请等待片刻... \n')
 
 headers = {
-    'cookie': '__cfduid=d577fc02e8bfc3b7a913dffa292912e521600175914; first_visit_datetime_pc=2020-09-15+22%3A18%3A35; p_ab_id=6; p_ab_id_2=2; p_ab_d_id=1548350158; yuid_b=NJkxZUA; _fbp=fb.1.1600175901889.1381699109; _ga=GA1.2.1294526804.1600175901; _gid=GA1.2.324411859.1600214533; device_token=6771f0047f0206ac76b0d887ad6f8154; a_type=0; ki_r=; limited_ads=%7B%22responsive%22%3A%22%22%7D; p_b_type=2; login_ever=yes; ki_s=210251%3A0.0.0.0.2; categorized_tags=6sZKldb07K~BU9SQkS-zU~DN6RDM1CuJ~EGefOqA6KB~IVwLyT8B6k~Mt5-5Xt_R_~NqnXOnazer~O2wfZxfonb~OEXgaiEbRa~OT-C6ubi9i~PHQDP-ccQD~RcahSSzeRf~b8b4-hqot7~sr5scJlaNv~tMaqyr0fI5~y8GNntYHsi; ki_t=1600214550602%3B1600477733055%3B1600477733055%3B5%3B54; tag_view_ranking=Lt-oEicbBr~eVxus64GZU~ahqc2_Z8SY~RTJMXD26Ak~7dr5yDiiNE~yvN_bfBdr-~afkK5n8h7Y~fLVJtGGhWk~0-sOOtqkAh~6RcLf9BQ-w~NxCKECN-a3~5uR0C2H1G-~88CzNsCQ-T~sr5scJlaNv~O2wfZxfonb~PHQDP-ccQD~02XYWZUIFd~MSNRmMUDgC~kGYw4gQ11Z~0xsDLqCEW6~A7hSoqw-5Z~ETjPkL0e6r~HY55MqmzzQ~OGMdJys38W~k3AcsamkCa~nBTsmJOROI~1HuE7w0nKg~ePN3h1AXKX~4ZJCd8OsPC~fIMPtFR8GH~RcahSSzeRf~CrFcrMFJzz~pYlUxeIoeg~K8esoIs2eW~dkvvzKpAOm~FqVQndhufZ~MHugbgF9Xo~FFz0M9z5uL~kUbnfdh8c_~TPdzb_n7qh~p1FQfxQRtJ~70wHD0F49f~eNdHeRUOQ3~OIoyEaauWk~vNapp9tuHK~2z4S7nphJy~tAvX8S-RSe~l-Y6C2rjLn~4DWYEq_Arj~CAJC_jOheS~BQFWWhxtER~jH0uD88V6F~F5CBR92p_Q~Mt5-5Xt_R_~X189mzByda~-zk8AVVQ-j~yLh4ENOaur~9PHNivVcYr~8_wOYu6BZ5~HLWLeyYOUF~lH5YZxnbfC~tMaqyr0fI5~VN7cgWyMmg~wKl4cqK7Gl~dFqfRYFNxQ~BU9SQkS-zU~hrkSAnsIgX~y8GNntYHsi~2h8ZfJVouI; __utmt=1; tags_sended=1; c_type=23; PHPSESSID=54167627_vgNLoMtwbkByNqG382ZHOSbzgfGkboVF; privacy_policy_agreement=2; b_type=0; __utmv=235335808.|2=login%20ever=yes=1^3=plan=normal=1^5=gender=male=1^6=user_id=54167627=1^9=p_ab_id=6=1^10=p_ab_id_2=2=1^11=lang=zh=1; __utma=235335808.1294526804.1600175901.1600497761.1600498137.19; __utmz=235335808.1600498137.19.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmc=235335808; __utmb=235335808.2.10.1600498137',
+    'cookie': 'first_visit_datetime_pc=2023-08-05+12%3A50%3A06; p_ab_id=1; p_ab_id_2=4; p_ab_d_id=62976449; yuid_b=UTeIAhA; __utmz=235335808.1691207414.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _fbp=fb.1.1691207418857.1491705339; __utmc=235335808; PHPSESSID=49343042_j0WRJL8M6Ta1RyZpcsMRCkyqWcQ2XxWH; device_token=40fda467a69354363f4e35f69dac6c46; c_type=26; privacy_policy_notification=0; a_type=0; b_type=1; _ga_MZ1NL4PHH0=GS1.1.1692679042.1.1.1692679123.0.0.0; __utmv=235335808.|2=login%20ever=no=1^3=plan=normal=1^5=gender=male=1^6=user_id=49343042=1^9=p_ab_id=1=1^10=p_ab_id_2=4=1^11=lang=zh=1; privacy_policy_agreement=6; _gid=GA1.2.1859355025.1692679138; QSI_S_ZN_5hF4My7Ad6VNNAi=v:0:0; __utma=235335808.436314191.1691207414.1692678957.1692683690.3; cf_clearance=wkga56cprxfwxk.9y1FY74CWhSy7M0jfFUhk2rYKGms-1692688058-0-1-fc1bb2d3.3d986202.ab1aed33-0.2.1692688058; _ga_75BBYNYN9J=GS1.1.1692683692.4.1.1692688207.0.0.0; _ga=GA1.2.459216914.1691207414; __cf_bm=5tHeTrfzhtYkxQ4syxobBuY0_BB85l5lsX9IoAEhDCA-1692690427-0-AWMFJfr/ZcBRgFXHXWs0ovqo4jfAwJ8E22e4nUJ/tiLxaCXjlFFiMjv8+OJt3Cdj0l/iu72GqDZ50dEnBcowZQMNJjvDpKNfGpWWN7m1Wes5',
     # 这是默认账号，你也可以用你的cookie
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36',
     'referer': 'https://pixiv.net/ajax/user/' + str(ID) + '/profile/top'
@@ -36,6 +36,7 @@ In = open('ids.txt', 'r')
 strr = In.read()
 In.close()
 JSON = json.loads(strr)
+# print(JSON)
 name = JSON['body']['illusts']
 
 
@@ -53,6 +54,7 @@ def download(pid, file_path):
         os.mkdir(file_path)
     os.chdir(file_path)
     file_path = file_path + '\\' + str(pid)
+    print('1')
     if os.path.exists(file_path):
         print('作品 {} 早就下好了'.format(pid))
     else:
@@ -60,7 +62,8 @@ def download(pid, file_path):
         hhd = headers
         hhd['referer'] = str(urlsum)
         count = requests.get(urlsum, headers=hhd)
-        JSON = json.loads(count.text)['body']
+        JSON = json.loads(count.content)['body']
+        print(urlsum, '\n', count.content, '\n', len(JSON))
         cnt = 0
         for no_use in JSON:
             img_url = no_use['urls']['original']
@@ -78,7 +81,7 @@ file_path = o_path
 i = q = 0
 JSON = requests.get(URL_2, headers=headers).json()
 print('该画师一共有', len(name), '个插画, 开始下载 \n')
-
+print(JSON)
 #       Definition
 
 Name = str(ID)
@@ -92,7 +95,7 @@ for q in name:
 for q in name:
     id_1 = str(q)
     try:
-        title = JSON['body']['illusts'][id_1]['illustTitle']
+        title = JSON['body']['illusts'][id_1]['title']
         userName = JSON['body']['illusts'][id_1]['userName']
         information = '作品名称：' + title, '作品ID：' + \
             str(id_1), '作者姓名和ID：' + userName, str(ID)
